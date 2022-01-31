@@ -1,19 +1,27 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import Home from "./pages/Home";
-import { Provider } from "react-redux";
-import { store } from './store/index'
+import { SwapiProvider } from './context/context/swapi/SwapiContext'
 function App() {
   return (
-    <Provider store={store}>
-      <Router>
-        <Routes>
-          <Route path='/' element={<Home />} />
-        </Routes>
-      </Router>
-      <ToastContainer autoClose={4000} />
-    </Provider>
+    <>
+      <SwapiProvider>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Home />} />
+          </Routes>
+        </Router>
+        <ToastContainer autoClose={4000} />
+      </SwapiProvider>
+    </>
   );
 }
 
 export default App;
+
+/*
+import { Provider } from "react-redux";
+import { store } from './store/index'
+<Provider store={store}>
+      </Provider>
+*/

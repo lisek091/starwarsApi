@@ -6,10 +6,10 @@ const todoApi = axios.create({
 });
 
 
-function* todoSaga(): Generator<StrictEffect> {
-
+function* fetchSaga(): Generator<StrictEffect> {
+   
 }
 
 
 
-export default todoSaga;
+export default fetchSaga;
