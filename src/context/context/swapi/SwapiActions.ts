@@ -6,7 +6,12 @@ const Swapi = axios.create({
     baseURL:API
 })
 
-export const fetchHero = async (text:string) => {
-    const response = await Swapi.get(`/people/${text}/`)
+export const fetchHero = async (number:number) => {
+    const response = await Swapi.get(`/people/?page=${number}`)
+    return response.data
+}
+
+export const fetchPlanet = async (planet:string) =>{
+    const response = await axios.get(`${planet}`)
     return response.data
 }

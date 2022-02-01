@@ -1,21 +1,21 @@
-import { SwapiDispatchTypes,people } from "./dataTypes"
+import { Planet,SwapiDispatchPlanetTypes } from "./dataTypes"
 
-export interface DefaultState {
-    people:people,
+export interface DefaultPlanetState {
+    planet:Planet,
     loading:boolean
 }
-export const defaultState:DefaultState ={
-    people:{} as people,
+export const defaultPlanetState:DefaultPlanetState ={
+    planet:{} as Planet,
     loading:false
 }
 
-export const swapiReducer = (state:DefaultState=defaultState,action:SwapiDispatchTypes) => {
+export const planetReducer = (state:DefaultPlanetState=defaultPlanetState,action:SwapiDispatchPlanetTypes) => {
     switch(action.type) {
-        case 'SWAPI_SUCCES':
+        case 'SWAPI_SUCCES_PLANET':
             return {
                 ...state,
                 loading:false,
-                people:action.payload
+                planet:action.payload
             }
         case 'SWAPI_FAIL':
             return {
